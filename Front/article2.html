@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новостной портал "ИТ.Москва"</title>
+    <link rel="stylesheet" href="article.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <img src="Фото/Лого.svg" alt="Логотип" />
+      <h1 class="sidebar-h1"><span class="it">IT.</span>Москва</h1>
+      <nav>
+        <a class="nav-btn active" href="index.html" aria-current="page">
+          <img src="Фото/Дом.svg" alt="иконка главная" width="25" height="25" />
+          Главная
+        </a>
+
+        <a class="nav-btn" href="favorites.html">
+          <img
+            src="Фото/Избранное.svg"
+            alt="иконка избранное"
+            width="30"
+            height="30"
+          />
+          Избранное
+        </a>
+
+        <a class="nav-btn" href="news.html">
+          <img
+            src="Фото/новости.svg"
+            alt="иконка новости"
+            width="30"
+            height="30"
+          />
+          Все новости
+        </a>
+
+        <a class="nav-btn" href="settings.html">
+          <img
+            src="Фото/настройки.svg"
+            alt="иконка настройки"
+            width="30"
+            height="30"
+          />
+          Настройки
+        </a>
+      </nav>
+
+      <button class="exit" type="button">
+        <img src="Фото/Выход.svg" alt="иконка выход" width="34" height="34" />
+        Выйти
+      </button>
+    </aside>
+    <header>
+      <a href="notifications.html">
+        <img src="Фото/Уведомления.svg" alt="иконка уведомления" class="bell" />
+      </a>
+      <a href="settings.html">
+        <img src="Фото/Профиль.svg" alt="иконка профиль" class="profile" />
+      </a>
+    </header>
+
+    <main class="article-page">
+        <a href="index.html" class="back-link"><img src="Фото/Стрелка назад.svg">Назад</a>
+        <section class="article-header">
+            <img src="Фото/Одна новость_2.png" alt="Новость 2">
+            <h1>Открыта лаборатория цифровых двойников</h1>
+        </section>
+
+        <section class="article-meta">
+            <span class="meta-item">
+                <img src="Фото/Дата.svg">
+                11.11.26г 
+            </span>
+
+            <span class="meta-item">
+                <img src="Фото/Время.svg">
+                14:00
+            </span>
+
+            <span class="meta-item">
+                <img src="Фото/Место.svg">
+                Аудитория 412
+            </span>
+
+            <span class="tag">Мероприятия</span>
+            <button class="heart" type="button" aria-label="Добавить в избранное" onclick="this.classList.toggle('active')">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"
+                  />
+                </svg>
+            </button>
+        </section>
+
+        <section class="article-body">
+            <h2>Описание</h2>
+            <p>
+                Новая лаборатория для направлений «Промышленный дизайн» и «IoT». Создавайте виртуальные копии объектов с ощущением веса и текстуры. Получены бессрочные лицензии на софт для симуляции. 
+            </p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

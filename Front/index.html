@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новостной портал "ИТ.Москва"</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <img src="Фото/Лого.svg" alt="Логотип" />
+      <h1 class="sidebar-h1"><span class="it">IT.</span>Москва</h1>
+
+      <nav>
+        <a class="nav-btn active" href="index.html" aria-current="page">
+          <img
+            src="Фото/Дом.svg"
+            alt="иконка главная"
+            width="25"
+            height="25"
+          />
+          Главная
+        </a>
+
+        <a class="nav-btn" href="favorites.html">
+          <img
+            src="Фото/Избранное.svg"
+            alt="иконка избранное"
+            width="30"
+            height="30"
+          />
+          Избранное
+        </a>
+
+        <a class="nav-btn" href="news.html">
+          <img
+            src="Фото/новости.svg"
+            alt="иконка новости"
+            width="30"
+            height="30"
+          />
+          Все новости
+        </a>
+
+        <a class="nav-btn" href="settings.html">
+          <img
+            src="Фото/настройки.svg"
+            alt="иконка настройки"
+            width="30"
+            height="30"
+          />
+          Настройки
+        </a>
+      </nav>
+
+      <button class="exit" type="button">
+        <img
+          src="Фото/Выход.svg"
+          alt="иконка выход"
+          width="34"
+          height="34"
+        />
+        Выйти
+      </button>
+    </aside>
+    <header>
+      <a href="notifications.html">
+        <img
+          src="Фото/Уведомления.svg"
+          alt="иконка уведомления"
+          class="bell"
+        />
+      </a>
+      <a href="settings.html">
+        <img
+          src="Фото/Профиль.svg"
+          alt="иконка профиль"
+          class="profile"
+        />
+      </a>
+    </header>
+    <main>
+      <section class="slider" aria-label="Слайдер">
+        <section class="slides">
+          <article class="slide">
+            <img src="Фото/Слайд 1.png" alt="VR зал" />
+            <h2>Перенос пар: Лекция по этике ИИ</h2>
+            <p>
+              Завтра вместо «Алгоритмов» — обязательная лекция от Национального
+              центра ИИ в VR-зале.
+            </p>
+            <button type="button">Узнать больше</button>
+          </article>
+          <article class="slide">
+            <img
+              src="Фото/Слайд 2.png"
+              alt="День открытых дверей"
+            />
+            <h2>День открытых дверей: «Твое будущее в IT»</h2>
+            <p>
+              23 ноября приглашаем абитуриентов и родителей на день открытых
+              дверей с мастер-классами.
+            </p>
+            <button type="button">Узнать больше</button>
+          </article>
+          <article class="slide">
+            <img
+              src="Фото/Слайд 3.png"
+              alt="Партнерство с ИТ компанией"
+            />
+            <h2>Партнерство с лидерами рынка</h2>
+            <p>
+              Колледж заключил партнерство с топ-IT-компаниями для организации
+              оплачиваемых стажировок.
+            </p>
+            <button type="button">Узнать больше</button>
+          </article>
+        </section>
+        <button class="arrow-back" type="button" aria-label="Назад">
+          &#10094;
+        </button>
+        <button class="arrow-next" type="button" aria-label="Вперёд">
+          &#10095;
+        </button>
+      </section>
+      <nav class="dots" aria-label="Выбор слайда">
+        <button class="dot active" type="button" aria-label="Слайд 1"></button>
+        <button class="dot" type="button" aria-label="Слайд 2"></button>
+        <button class="dot" type="button" aria-label="Слайд 3"></button>
+      </nav>
+      <section class="news">
+        <h2>Последние новости</h2>
+        <a href="news.html">
+          Все новости
+          <img
+            src="Фото/Стрелка вправо.svg"
+            alt="иконка стрелка вправо"
+          />
+        </a>
+        <article class="card" onclick="window.location.href='article1.html'">
+          <img
+            src="Фото/Последние новости_ 1.png"
+            alt="Новость 1"
+          />
+          <h3>Победа на кубке по квантовому программированию</h3>
+          <time datetime="2026-11-10">10.11.26г</time>
+          <time datetime="18:00">18:00</time>
+          <button class="heart" type="button" aria-label="Добавить в избранное">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"
+              />
+            </svg>
+          </button>
+        </article>
+        <article class="card" onclick="window.location.href='article2.html'">
+          <img
+            src="Фото/Последние новости_ 2.png"
+            alt="Новость 2"
+          />
+          <h3>Открыта лаборатория цифровых двойников</h3>
+          <time datetime="2026-11-11">11.11.26г</time>
+          <time datetime="14:00">14:00</time>
+          <button class="heart" type="button" aria-label="Добавить в избранное">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"
+              />
+            </svg>
+          </button>
+        </article>
+      </section>
+    </main>
+    <dialog class="logout-modal" id="logoutModal">
+      <p>Вы точно хотите выйти?</p>
+      <button class="logout-confirm" type="button">Выйти</button>
+      <button class="logout-cancel" type="button">Отмена</button>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>

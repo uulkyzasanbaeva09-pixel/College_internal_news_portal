@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новостной портал "ИТ.Москва"</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="settings.css"/>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <img src="Фото/Лого.svg" alt="Логотип" />
+      <h1 class="sidebar-h1"><span class="it">IT.</span>Москва</h1>
+
+      <nav>
+        <a class="nav-btn" href="index.html">
+          <img
+            src="Фото/Дом.svg"
+            alt="иконка главная"
+            width="25"
+            height="25"
+          />
+          Главная
+        </a>
+
+        <a class="nav-btn" href="favorites.html">
+          <img
+            src="Фото/Избранное.svg"
+            alt="иконка избранное"
+            width="30"
+            height="30"
+          />
+          Избранное
+        </a>
+
+        <a class="nav-btn" href="news.html">
+          <img
+            src="Фото/новости.svg"
+            alt="иконка новости"
+            width="30"
+            height="30"
+          />
+          Все новости
+        </a>
+        <a class="nav-btn active" href="settings.html" aria-current="page">
+          <img
+            src="Фото/настройки.svg"
+            alt="иконка настройки"
+            width="30"
+            height="30"
+          />
+          Настройки
+        </a>
+      </nav>
+
+      <button class="exit" type="button">
+        <img
+          src="Фото/Выход.svg"
+          alt="иконка выход"
+          width="34"
+          height="34"
+        />
+        Выйти
+      </button>
+    </aside>
+    <header>
+      <a href="notifications.html">
+        <img
+          src="Фото/Уведомления.svg"
+          alt="иконка уведомления"
+          class="bell"
+        />
+      </a>
+      <a href="settings.html">
+        <img
+          src="Фото/Профиль.svg"
+          alt="иконка профиль"
+          class="profile"
+        />
+      </a>
+    </header>
+    <main class="settings-page">
+        <h1>Настройки</h1>
+        <div class="settings-content">
+            <div class="avatar-section">
+                <div class="avatar-circle">
+                    <img id="userAvatar" src="Фото/Профиль.svg" alt="avatar"/>
+                </div>
+                <button class="change-photo-btn" type="button" id="changePhotoBtn">Изменить фото</button>
+            </div>
+            <div class="settings-form">
+                <div class="form-group">
+                    <label for="fio">ФИО</label>
+                    <input type="text" id="fio" placeholder="Иван Иванов"/>
+                </div>
+                  <div class="form-group">
+                    <label for="group">Группа</label>
+                    <input type="text" id="group" placeholder="ВР1"/>
+                </div>
+                <div class="form-group toggle-group">
+                    <span class="toggle-label">Уведомления</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked/>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="form-group theme-group">
+                    <span class="theme-label">Тема оформления</span>
+                    <div class="theme-options">
+                        <label class="radio-option">
+                            <input type="radio" name="theme" value="light"/>
+                            <span class="radio-circle"></span>
+                            Светлая
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="theme" value="dark" checked/>
+                            <span class="radio-circle"></span>
+                            Темная
+                        </label>
+                    </div>
+                </div>
+                <button class="save-btn" type="button">Сохранить изменения</button>
+            </div>
+        </div>
+    </main>
+        <dialog class="logout-modal" id="logoutModal">
+      <p>Вы точно хотите выйти?</p>
+      <button class="logout-confirm" type="button">Выйти</button>
+      <button class="logout-cancel" type="button">Отмена</button>
+    </dialog>
+    <script src="script.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>
