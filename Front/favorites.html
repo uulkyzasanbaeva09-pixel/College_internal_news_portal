@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новостной портал "ИТ.Москва"</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/favorites.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <img src="Фото/Лого.svg" alt="Логотип" />
+      <h1 class="sidebar-h1"><span class="it">IT.</span>Москва</h1>
+
+      <nav>
+        <a class="nav-btn" href="index.html" aria-current="page">
+          <img
+            src="Фото/Дом.svg"
+            alt="иконка главная"
+            width="25"
+            height="25"
+          />
+          Главная
+        </a>
+
+        <a class="nav-btn  active" href="favorites.html">
+          <img
+            src="Фото/Избранное.svg"
+            alt="иконка избранное"
+            width="30"
+            height="30"
+          />
+          Избранное
+        </a>
+
+        <a class="nav-btn" href="news.html">
+          <img
+            src="Фото/новости.svg"
+            alt="иконка новости"
+            width="30"
+            height="30"
+          />
+          Все новости
+        </a>
+
+        <a class="nav-btn" href="settings.html">
+          <img
+            src="Фото/настройки.svg"
+            alt="иконка настройки"
+            width="30"
+            height="30"
+          />
+          Настройки
+        </a>
+      </nav>
+
+      <button class="exit" type="button">
+        <img
+          src="Фото/Выход.svg"
+          alt="иконка выход"
+          width="34"
+          height="34"
+        />
+        Выйти
+      </button>
+    </aside>
+    <header>
+      <a href="notifications.html">
+        <img
+          src="Фото/Уведомления.svg"
+          alt="иконка уведомления"
+          class="bell"
+        />
+      </a>
+      <a href="settings.html">
+        <img
+          src="Фото/Профиль.svg"
+          alt="иконка профиль"
+          class="profile"
+        />
+      </a>
+    </header>
+    <main>
+  <section class="news">
+    <h2>Избранное</h2>
+    <a href="news.html">
+      Все новости
+      <img src="Фото/Стрелка вправо.svg" alt="иконка стрелка вправо" />
+    </a>
+    <div id="favoritesContainer" class="favorites-grid"></div>
+  </section>
+  <div class="selection-actions" id="selectionActions">
+    <span id="selectedCount">Выбрано: 0</span>
+    <button id="deleteSelectedBtn" class="btn-delete-selected" type="button">Удалить выбранное</button>
+  </div>
+</main>
+    <dialog class="logout-modal" id="logoutModal">
+      <p>Вы точно хотите выйти?</p>
+      <button class="logout-confirm" type="button">Выйти</button>
+      <button class="logout-cancel" type="button">Отмена</button>
+    </dialog>
+    <script src="script/main.js"></script>
+  </body>
+</html>

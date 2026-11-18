@@ -1,0 +1,180 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin-left: 270px;
+    height: 115px;
+    background: #11152b;
+    border-bottom: 1px solid #1c2740;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 837px;
+}
+
+.search-container input {
+    width: 100%;
+    padding-left: 55px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.search {
+    border-radius: 20px;
+    background-color: #141a39;
+    height: 55px;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+}
+
+.search::placeholder {
+    color: #a5a5b5;
+    font-size: 14px;
+}
+
+.bell {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+main {
+    margin-left: 270px;
+    padding: 30px;
+}
+
+.filters {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    border: 1px solid #2a3757;
+    border-radius: 20px;
+    background-color: #1a2340;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-btn:hover {
+    background: #243055;
+}
+
+.filter-btn.active {
+    background: #ffffff;
+    color: #0d1220;
+    border-color: #ffffff;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.new {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "photo photo photo"
+      "title title title"
+      "space space space"
+      "date  time  heart";
+    gap: 12px 16px;
+    min-height: 360px;
+    padding: 16px;
+    background: var(--block);
+    border: 1px solid var(--border2);
+    border-radius: 20px;
+}
+
+.new > img {
+    grid-area: photo;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+  
+.new h3 {
+    grid-area: title;
+    font-size: 18px;
+    line-height: 1.4;
+}
+  
+.new time {
+    align-self: center;
+    color: var(--subtext);
+    font-size: 18px;
+}
+  
+.new time:first-of-type {
+       grid-area: date; 
+}
+  
+.new time:last-of-type {
+       grid-area: time; 
+}
+  
+.heart {
+    grid-area: heart;
+    justify-self: end;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: transparent;
+}
+  
+.heart svg {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: var(--text);
+    stroke-width: 2;
+}
+  
+  
+.heart.active svg {
+    fill:var(--text);
+}

@@ -1,0 +1,36 @@
+main {
+  margin-left: 270px;
+  padding: 25px 40px 40px;
+}
+
+.news {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.news h2 {
+  grid-column: 1;
+  font-size: 30px;
+}
+
+.news > a {
+  grid-column: 2;
+  justify-self: end;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.news > a:hover {
+  color: var(--btn);
+}
+
+.news > a img {
+  width: 24px;
+  height: 24px;
+}
