@@ -1,4 +1,4 @@
-header {
+body.news-page header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,7 +8,6 @@ header {
     background: #11152b;
     border-bottom: 1px solid #1c2740;
 }
-
 .header-left {
     display: flex;
     align-items: center;
@@ -52,7 +51,16 @@ header {
     border: none;
     font-size: 14px;
 }
-
+.search:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+.search-container input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
 .search::placeholder {
     color: #a5a5b5;
     font-size: 14px;

@@ -67,21 +67,6 @@ if (slides.length > 0 && dots.length > 0 && arrowNext && arrowBack) {
   startTimer();
 }
 
-const hearts = document.querySelectorAll(".heart");
-
-if (hearts.length > 0) {
-  hearts.forEach((heart) => {
-    heart.addEventListener("click", (event) => {
-      event.stopPropagation();
-      heart.classList.toggle("active");
-      const liked = heart.classList.contains("active");
-      heart.setAttribute(
-        "aria-label",
-        liked ? "Убрать из избранного" : "Добавить в избранное",
-      );
-    });
-  });
-}
 
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light-theme");

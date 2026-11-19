@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/news.css">
     <link rel="stylesheet" href="style/article.css">
 </head>
-<body>
+<body class="news-page">
     <aside class="sidebar">
         <img src="Фото/Лого.svg" alt="Логотип" />
         <h1 class="sidebar-h1"><span class="it">IT.</span>Москва</h1>
@@ -104,8 +104,11 @@
         </section>
         
         <section class="cards">
-        <article class="new" onclick="window.location.href='article5.html'" data-category="учеба">
-          <img
+          <article class="new"
+          data-article-id="article1.html"
+          data-category="Учеба"
+          onclick="window.location.href='article1.html'">
+            <img
             src="Фото/Последние новости_ 1.png"
             alt="Новость 1"
           />
@@ -120,7 +123,10 @@
             </svg>
           </button>
         </article>
-        <article class="new" onclick="window.location.href='article6.html'" data-category="мероприятия">
+        <article class="new"
+        data-article-id="article2.html"
+        data-category="Мероприятия"
+        onclick="window.location.href='article2.html'">
           <img
             src="Фото/Последние новости_ 2.png"
             alt="Новость 2"
@@ -136,7 +142,10 @@
             </svg>
           </button>
         </article>
-        <article class="new" onclick="window.location.href='article7.html'" data-category="спорт">
+        <article class="new"
+        data-article-id="article7.html"
+        data-category="Спорт"
+        onclick="window.location.href='article7.html'">
           <img
             src="Фото/Новость 3.png"
             alt="Новость 2"
@@ -155,5 +164,6 @@
       </section>
       </main>
       <script src="script/main.js"></script>
+      <script src="script/favorites.js"></script>
 </body>
 </html>
