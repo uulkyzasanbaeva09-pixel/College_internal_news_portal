@@ -186,3 +186,207 @@ main {
 .heart.active svg {
     fill:var(--text);
 }
+.new.hidden {
+    display: none;
+}
+
+.empty {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #8a93ad;
+  font-size: 22px;
+}
+
+.empty.show {
+  display: flex;
+}
+
+.filter-modal {
+  width: min(900px, 95%);
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #2a3757;
+  border-radius: 20px;
+  background: #1a1f3a;
+  color: #ffffff;
+}
+
+.filter-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.filter-modal h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.filter-modal h3 {
+  font-size: 18px;
+  margin: 16px 0 10px;
+}
+
+.filter-group {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.filter-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    object-fit: contain;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid #2a3757;
+  border-radius: 12px;
+  background: #11152b;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.filter-select option {
+  background: #11152b;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+
+.filter-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #7c5cfc;
+  cursor: pointer;
+}
+
+.filter-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 16px;
+  border: 1px solid #2a3757;
+  border-radius: 12px;
+  background: #11152b;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.filter-input::placeholder {
+  color: #8a93ad;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn-reset,
+.btn-apply {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-reset {
+  background: rgba(145, 117, 255, 0.18);
+  color: #ffffff;
+}
+
+.btn-reset:hover {
+  background: #3a4a70;
+}
+
+.btn-apply {
+  background: #603bff;
+  color: #ffffff;
+}
+
+.btn-apply:hover {
+  background: #6a49f2;
+}
+/* Светлая тема — страница Все новости */
+
+body.light-theme.news-page header {
+    background: var(--block);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Кнопки фильтров */
+
+body.light-theme .filter-btn {
+    background: var(--block);
+    color: var(--text);
+    border-color: var(--border2);
+}
+
+/* Наведение на фильтры */
+
+body.light-theme .filter-btn:hover {
+    background: var(--hover-bg);
+}
+
+/* Активная кнопка фильтра */
+
+body.light-theme .filter-btn.active {
+    background: var(--btn);
+    color: #ffffff;
+    border-color: var(--btn);
+}
+body.light-theme .search {
+    background: #E8E8E8;
+    color: #222222;
+    border: 1px solid #D0D0D0;
+}
+
+body.light-theme .search::placeholder {
+    color: #777777;
+}
+
+body.light-theme .search-icon {
+    filter: brightness(0);
+}

@@ -101,12 +101,14 @@
           <button class="filter-btn" data-filter="мероприятия">Мероприятия</button>
           <button class="filter-btn" data-filter="конкурсы">Конкурсы</button>
           <button class="filter-btn" data-filter="спорт">Спорт</button>
+          <img src="Фото/фильтр.svg" alt="фильтр" class="filter-icon"/>
         </section>
         
         <section class="cards">
           <article class="new"
           data-article-id="article1.html"
-          data-category="Учеба"
+          data-category="учеба"
+          data-specialty="Компьютерные системы и комплексы (09.02.01)"
           onclick="window.location.href='article1.html'">
             <img
             src="Фото/Последние новости_ 1.png"
@@ -125,7 +127,8 @@
         </article>
         <article class="new"
         data-article-id="article2.html"
-        data-category="Мероприятия"
+        data-category="мероприятия"           
+        data-specialty="Интеграция решений с применением технологий искусственного интеллекта (09.02.13)"
         onclick="window.location.href='article2.html'">
           <img
             src="Фото/Последние новости_ 2.png"
@@ -144,7 +147,7 @@
         </article>
         <article class="new"
         data-article-id="article7.html"
-        data-category="Спорт"
+        data-category="спорт"
         onclick="window.location.href='article7.html'">
           <img
             src="Фото/Новость 3.png"
@@ -162,8 +165,152 @@
           </button>
         </article>
       </section>
-      </main>
-      <script src="script/main.js"></script>
+      <div class="empty" id="emptyState">
+        <p>Здесь пусто</p>
+      </div>
+      <dialog class="filter-modal" id="filterModal">
+        <h2>Фильтры</h2>
+
+        <div class="filter-group">
+          <select class="filter-select" id="filterSpecialty">
+            <option value="">Специальность</option>
+            <option value="Компьютерные системы и комплексы (09.02.01)">
+              Компьютерные системы и комплексы (09.02.01)
+            </option>
+            <option
+              value="Интеграция решений с применением технологий искусственного интеллекта (09.02.13)"
+            >
+              Интеграция решений с применением технологий искусственного
+              интеллекта (09.02.13)
+            </option>
+            <option value="Веб-разработка (09.02.09)">
+              Веб-разработка (09.02.09)
+            </option>
+            <option
+              value="Разработка компьютерных игр, дополненной и виртуальной реальности (09.02.10)"
+            >
+              Разработка компьютерных игр, дополненной и виртуальной реальности
+              (09.02.10)
+            </option>
+            <option value="Сетевое и системное администрирование (09.02.06)">
+              Сетевое и системное администрирование (09.02.06)
+            </option>
+            <option value="Интеллектуальные интегрированные системы (09.02.08)">
+              Интеллектуальные интегрированные системы (09.02.08)
+            </option>
+            <option
+              value="Разработка и управление программным обеспечением (09.02.11)"
+            >
+              Разработка и управление программным обеспечением (09.02.11)
+            </option>
+            <option
+              value="Техническая эксплуатация и сопровождение информационных систем (09.02.12)"
+            >
+              Техническая эксплуатация и сопровождение информационных систем
+              (09.02.12)
+            </option>
+            <option
+              value="Обеспечение информационной безопасности телекоммуникационных систем (10.02.04)"
+            >
+              Обеспечение информационной безопасности телекоммуникационных
+              систем (10.02.04)
+            </option>
+            <option
+              value="Обеспечение информационной безопасности автоматизированных систем (10.02.05)"
+            >
+              Обеспечение информационной безопасности автоматизированных систем
+              (10.02.05)
+            </option>
+            <option
+              value="Информационное моделирование в строительстве (08.02.15)"
+            >
+              Информационное моделирование в строительстве (08.02.15)
+            </option>
+            <option value="Мастер вертикального транспорта (23.01.18)">
+              Мастер вертикального транспорта (23.01.18)
+            </option>
+            <option value="Графический дизайнер (54.01.20)">
+              Графический дизайнер (54.01.20)
+            </option>
+          </select>
+          <svg
+            class="select-arrow"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </div>
+
+        <div class="filter-columns">
+          <div class="filter-column">
+            <h3>Категории</h3>
+            <label class="checkbox-label">
+              <input type="checkbox" name="category" value="учеба" />
+              <span>Учеба</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="category" value="мероприятия" />
+              <span>Мероприятия</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="category" value="конкурсы" />
+              <span>Конкурсы</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="category" value="спорт" />
+              <span>Спорт</span>
+            </label>
+          </div>
+
+          <div class="filter-column">
+            <h3>Дата</h3>
+            <input
+              type="text"
+              class="filter-input"
+              id="filterDate"
+              placeholder="дд.мм.гггг"
+            />
+
+            <h3>Время</h3>
+            <div class="filter-group">
+              <select class="filter-select" id="filterTime">
+                <option value="">Любое время</option>
+                <option value="утро">Утро (до 12:00)</option>
+                <option value="день">День (12:00–18:00)</option>
+                <option value="вечер">Вечер (после 18:00)</option>
+              </select>
+              <svg
+                class="select-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-actions">
+          <button class="btn-reset" type="button" id="resetFilters">
+            Сбросить
+          </button>
+          <button class="btn-apply" type="button" id="applyFilters">
+            Применить
+          </button>
+        </div>
+      </dialog>
+    </main>
+    <script src="script/main.js"></script>
       <script src="script/favorites.js"></script>
+      <script src="script/news.js"></script>
 </body>
 </html>
