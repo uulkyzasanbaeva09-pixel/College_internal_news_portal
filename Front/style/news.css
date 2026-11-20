@@ -349,14 +349,12 @@ main {
 .btn-apply:hover {
   background: #6a49f2;
 }
-/* Светлая тема — страница Все новости */
 
 body.light-theme.news-page header {
     background: var(--block);
     border-bottom: 1px solid var(--border);
 }
 
-/* Кнопки фильтров */
 
 body.light-theme .filter-btn {
     background: var(--block);
@@ -364,13 +362,11 @@ body.light-theme .filter-btn {
     border-color: var(--border2);
 }
 
-/* Наведение на фильтры */
 
 body.light-theme .filter-btn:hover {
     background: var(--hover-bg);
 }
 
-/* Активная кнопка фильтра */
 
 body.light-theme .filter-btn.active {
     background: var(--btn);
