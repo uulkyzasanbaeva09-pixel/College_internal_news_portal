@@ -1,0 +1,150 @@
+main {
+  margin-left: 270px;
+  padding: 25px 40px 40px;
+}
+
+.news {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.news h2 {
+  grid-column: 1;
+  font-size: 30px;
+}
+
+.news > a {
+  grid-column: 2;
+  justify-self: end;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.news > a:hover {
+  color: var(--btn);
+}
+
+.news > a img {
+  width: 24px;
+  height: 24px;
+}
+.favorites-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.favorite-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.favorite-checkbox {
+  appearance: none;
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--text);
+  border-radius: 5px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.favorite-checkbox:checked {
+  background: var(--btn);
+  border-color: var(--btn);
+}
+
+.favorite-checkbox:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.favorite-card {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.favorite-card .heart.active svg {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.favorite-details-btn {
+  grid-column: 1 / -1;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--btn);
+  color: white;
+  cursor: pointer;
+}
+
+.favorite-details {
+  grid-column: 1 / -1;
+  padding: 16px 0;
+  color: var(--subtext);
+  line-height: 1.6;
+}
+
+.favorite-details[hidden] {
+  display: none;
+}
+
+.favorite-details .tag {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.selection-actions {
+  display: none;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 25px;
+  margin-left: 270px;
+  padding: 20px 40px;
+}
+
+.btn-delete-selected,
+.btn-clear {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-delete-selected {
+  background: #d93636;
+}
+
+.btn-clear {
+  background: #603bff;
+}
+
+.empty-favorites {
+  grid-column: 1 / -1;
+  color: var(--subtext);
+  font-size: 18px;
+  padding: 30px 0;
+}
+
+@media (max-width: 900px) {
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+}

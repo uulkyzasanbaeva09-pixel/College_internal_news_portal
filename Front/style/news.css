@@ -1,0 +1,392 @@
+body.news-page header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin-left: 270px;
+    height: 115px;
+    background: #11152b;
+    border-bottom: 1px solid #1c2740;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 837px;
+}
+
+.search-container input {
+    width: 100%;
+    padding-left: 55px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.search {
+    border-radius: 20px;
+    background-color: #141a39;
+    height: 55px;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+}
+.search:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+.search-container input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+.search::placeholder {
+    color: #a5a5b5;
+    font-size: 14px;
+}
+
+.bell {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+main {
+    margin-left: 270px;
+    padding: 30px;
+}
+
+.filters {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    border: 1px solid #2a3757;
+    border-radius: 20px;
+    background-color: #1a2340;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-btn:hover {
+    background: #243055;
+}
+
+.filter-btn.active {
+    background: #ffffff;
+    color: #0d1220;
+    border-color: #ffffff;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.new {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "photo photo photo"
+      "title title title"
+      "space space space"
+      "date  time  heart";
+    gap: 12px 16px;
+    min-height: 360px;
+    padding: 16px;
+    background: var(--block);
+    border: 1px solid var(--border2);
+    border-radius: 20px;
+}
+
+.new > img {
+    grid-area: photo;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+  
+.new h3 {
+    grid-area: title;
+    font-size: 18px;
+    line-height: 1.4;
+}
+  
+.new time {
+    align-self: center;
+    color: var(--subtext);
+    font-size: 18px;
+}
+  
+.new time:first-of-type {
+       grid-area: date; 
+}
+  
+.new time:last-of-type {
+       grid-area: time; 
+}
+  
+.heart {
+    grid-area: heart;
+    justify-self: end;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: transparent;
+}
+  
+.heart svg {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: var(--text);
+    stroke-width: 2;
+}
+  
+  
+.heart.active svg {
+    fill:var(--text);
+}
+.new.hidden {
+    display: none;
+}
+
+.empty {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #8a93ad;
+  font-size: 22px;
+}
+
+.empty.show {
+  display: flex;
+}
+
+.filter-modal {
+  width: min(900px, 95%);
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #2a3757;
+  border-radius: 20px;
+  background: #1a1f3a;
+  color: #ffffff;
+}
+
+.filter-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.filter-modal h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.filter-modal h3 {
+  font-size: 18px;
+  margin: 16px 0 10px;
+}
+
+.filter-group {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.filter-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    object-fit: contain;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid #2a3757;
+  border-radius: 12px;
+  background: #11152b;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.filter-select option {
+  background: #11152b;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+
+.filter-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #7c5cfc;
+  cursor: pointer;
+}
+
+.filter-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 16px;
+  border: 1px solid #2a3757;
+  border-radius: 12px;
+  background: #11152b;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.filter-input::placeholder {
+  color: #8a93ad;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn-reset,
+.btn-apply {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-reset {
+  background: rgba(145, 117, 255, 0.18);
+  color: #ffffff;
+}
+
+.btn-reset:hover {
+  background: #3a4a70;
+}
+
+.btn-apply {
+  background: #603bff;
+  color: #ffffff;
+}
+
+.btn-apply:hover {
+  background: #6a49f2;
+}
+/* Светлая тема — страница Все новости */
+
+body.light-theme.news-page header {
+    background: var(--block);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Кнопки фильтров */
+
+body.light-theme .filter-btn {
+    background: var(--block);
+    color: var(--text);
+    border-color: var(--border2);
+}
+
+/* Наведение на фильтры */
+
+body.light-theme .filter-btn:hover {
+    background: var(--hover-bg);
+}
+
+/* Активная кнопка фильтра */
+
+body.light-theme .filter-btn.active {
+    background: var(--btn);
+    color: #ffffff;
+    border-color: var(--btn);
+}
+body.light-theme .search {
+    background: #E8E8E8;
+    color: #222222;
+    border: 1px solid #D0D0D0;
+}
+
+body.light-theme .search::placeholder {
+    color: #777777;
+}
+
+body.light-theme .search-icon {
+    filter: brightness(0);
+}

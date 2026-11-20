@@ -137,8 +137,10 @@
             alt="иконка стрелка вправо"
           />
         </a>
-        <article class="card" onclick="window.location.href='article1.html'">
-          <img
+        <article class="card"
+        data-article-id="article1.html"
+        onclick="window.location.href='article1.html'">          
+        <img
             src="Фото/Последние новости_ 1.png"
             alt="Новость 1"
           />
@@ -153,8 +155,10 @@
             </svg>
           </button>
         </article>
-        <article class="card" onclick="window.location.href='article2.html'">
-          <img
+        <article class="card"
+        data-article-id="article2.html"
+        onclick="window.location.href='article2.html'">
+            <img
             src="Фото/Последние новости_ 2.png"
             alt="Новость 2"
           />
@@ -177,5 +181,6 @@
       <button class="logout-cancel" type="button">Отмена</button>
     </dialog>
     <script src="script/main.js"></script>
+    <script src="script/favorites.js"></script>
   </body>
 </html>

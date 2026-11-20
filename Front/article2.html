@@ -63,7 +63,8 @@
     </header>
 
     <main class="article-page">
-        <a href="index.html" class="back-link"><img src="Фото/Стрелка назад.svg">Назад</a>
+        <a href="index.html" class="back-link" onclick="history.back(); return false;"> 
+          <img src="Фото/Стрелка назад.svg" alt="">Назад</a>
         <section class="article-header">
             <img src="Фото/Одна новость_2.png" alt="Новость 2">
             <h1>Открыта лаборатория цифровых двойников</h1>
@@ -86,7 +87,7 @@
             </span>
 
             <span class="tag">Мероприятия</span>
-            <button class="heart" type="button" aria-label="Добавить в избранное" onclick="this.classList.toggle('active')">
+            <button class="heart" type="button" aria-label="Добавить в избранное">
                 <svg viewBox="0 0 24 24">
                   <path
                     d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"
@@ -103,5 +104,6 @@
         </section>
     </main>
     <script src="script/main.js"></script>
+    <script src="script/favorites.js"></script>
   </body>
 </html>
