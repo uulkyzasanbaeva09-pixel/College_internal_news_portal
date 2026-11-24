@@ -68,24 +68,26 @@ if (slides.length > 0 && dots.length > 0 && arrowNext && arrowBack) {
 }
 
 
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-theme");
-}
+const savedTheme = localStorage.getItem("theme") || "dark";
+
+document.body.classList.toggle(
+    "light-theme",
+    savedTheme === "light"
+);
 
 const themeRadios = document.querySelectorAll('input[name="theme"]');
 
-if (themeRadios.length > 0) {
-  themeRadios.forEach((radio) => {
-    radio.checked = radio.value === localStorage.getItem("theme");
+themeRadios.forEach((radio) => {
+    radio.checked = radio.value === savedTheme;
 
     radio.addEventListener("change", () => {
-      if (radio.value === "light") {
-        document.body.classList.add("light-theme");
-        localStorage.setItem("theme", "light");
-      } else {
-        document.body.classList.remove("light-theme");
-        localStorage.setItem("theme", "dark");
-      }
+        const selectedTheme = radio.value;
+
+        document.body.classList.toggle(
+            "light-theme",
+            selectedTheme === "light"
+        );
+
+        localStorage.setItem("theme", selectedTheme);
     });
-  });
-}
+});

@@ -118,3 +118,46 @@ document.querySelectorAll(".heart").forEach((heart) => {
     heart.classList.toggle("active");
   });
 });
+const searchInput = document.getElementById("searchInput");
+const searchClear = document.getElementById("searchClear");
+const searchContainer = document.getElementById("searchContainer");
+
+if (searchInput && searchClear && searchContainer) {
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (query.length > 0) {
+      searchContainer.classList.add("has-value");
+    } else {
+      searchContainer.classList.remove("has-value");
+    }
+
+    cards.forEach((card) => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+
+      const desc = card.querySelector(".card-desc");
+      const descText = desc ? desc.textContent.toLowerCase() : "";
+
+      if (query === "" || title.includes(query) || descText.includes(query)) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+
+    checkEmpty();
+  });
+
+  searchClear.addEventListener("click", () => {
+    searchInput.value = "";
+
+    searchContainer.classList.remove("has-value");
+
+    cards.forEach((card) => {
+      card.classList.remove("hidden");
+    });
+
+    checkEmpty();
+    searchInput.focus();
+  });
+}

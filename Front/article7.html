@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Новостной портал "ИТ.Москва"</title>
-    <link rel="stylesheet" href="style/article.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/article.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/responsive.css" />
   </head>
   <body>
     <aside class="sidebar">
@@ -18,17 +19,32 @@
         </a>
 
         <a class="nav-btn" href="favorites.html">
-          <img src="Фото/Избранное.svg" alt="иконка избранное" width="30" height="30" />
+          <img
+            src="Фото/Избранное.svg"
+            alt="иконка избранное"
+            width="30"
+            height="30"
+          />
           Избранное
         </a>
 
         <a class="nav-btn" href="news.html">
-          <img src="Фото/новости.svg" alt="иконка новости" width="30" height="30" />
+          <img
+            src="Фото/новости.svg"
+            alt="иконка новости"
+            width="30"
+            height="30"
+          />
           Все новости
         </a>
 
         <a class="nav-btn" href="settings.html">
-          <img src="Фото/настройки.svg" alt="иконка настройки" width="30" height="30" />
+          <img
+            src="Фото/настройки.svg"
+            alt="иконка настройки"
+            width="30"
+            height="30"
+          />
           Настройки
         </a>
       </nav>
@@ -40,38 +56,77 @@
     </aside>
 
     <header>
-      <a href="notifications.html">
-        <img src="Фото/Уведомления.svg" alt="иконка уведомления" class="bell" />
-      </a>
-      <a href="settings.html">
-        <img src="Фото/Профиль.svg" alt="иконка профиль" class="profile" />
-      </a>
+      <div class="mobile-brand">
+        <img src="Фото/Лого.svg" alt="Логотип" />
+        <span><span class="it">IT.</span>Москва</span>
+      </div>
+
+      <div class="mobile-header-actions">
+        <a href="notifications.html">
+          <img src="Фото/Уведомления.svg" alt="Уведомления" class="bell" />
+        </a>
+
+        <a href="settings.html">
+          <img src="Фото/Профиль.svg" alt="Профиль" class="profile" />
+        </a>
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M3 6h18"></path>
+            <path d="M3 12h18"></path>
+            <path d="M3 18h18"></path>
+          </svg>
+        </button>
+      </div>
     </header>
 
+    <div class="mobile-menu-overlay"></div>
+
     <main class="article-page">
-      <a href="index.html" class="back-link" onclick="history.back(); return false;">
-        <img src="Фото/Стрелка назад.svg" alt="">Назад
+      <a
+        href="index.html"
+        class="back-link"
+        onclick="
+          history.back();
+          return false;
+        "
+      >
+        <img src="Фото/Стрелка назад.svg" alt="" />Назад
       </a>
 
       <section class="article-header">
-        <img src="Фото/Новость 3.png" alt="Турнир по киберспорту среди колледжей">
+        <img
+          src="Фото/Новость 3.png"
+          alt="Турнир по киберспорту среди колледжей"
+        />
         <h1>Турнир по киберспорту среди колледжей</h1>
       </section>
 
       <section class="article-meta">
         <span class="meta-item">
-          <img src="Фото/Дата.svg" alt="">
-          17.11.26г
+          <img src="Фото/Дата.svg" alt="" />
+          15.11.26г
         </span>
 
         <span class="meta-item">
-          <img src="Фото/Время.svg" alt="">
-          14:00
+          <img src="Фото/Время.svg" alt="" />
+          16:00-20:00
         </span>
 
         <span class="meta-item">
-          <img src="Фото/Место.svg" alt="">
-          Компьютерный класс
+          <img src="Фото/Место.svg" alt="" />
+          Кибер Арена
         </span>
 
         <span class="tag">Мероприятия</span>
@@ -88,17 +143,18 @@
       <section class="article-body">
         <h2>Описание</h2>
         <p>
-          Студенты нашего колледжа приняли участие в масштабном турнире
-          по киберспорту среди колледжей. Участники соревновались в командных
-          играх, демонстрируя стратегическое мышление, скорость реакции
-          и умение работать в команде. Турнир подарил яркие эмоции,
-          новые знакомства и возможность проявить свои навыки.
-          Поздравляем участников и желаем дальнейших побед!
+          Студенты нашего колледжа приняли участие в масштабном турнире по
+          киберспорту среди колледжей. Участники соревновались в командных
+          играх, демонстрируя стратегическое мышление, скорость реакции и умение
+          работать в команде. Турнир подарил яркие эмоции, новые знакомства и
+          возможность проявить свои навыки. Поздравляем участников и желаем
+          дальнейших побед!
         </p>
       </section>
     </main>
 
     <script src="script/main.js"></script>
     <script src="script/favorites.js"></script>
+    <script src="script/responsive.js"></script>
   </body>
 </html>
