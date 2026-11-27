@@ -416,3 +416,15 @@ body.light-theme .bell,
 body.light-theme .profile {
   filter: brightness(0) !important;
 }
+body {
+    animation: появление 0.4s ease;
+}
+
+@keyframes появление {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

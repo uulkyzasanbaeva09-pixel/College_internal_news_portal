@@ -2,22 +2,28 @@ const exitButton = document.querySelector(".exit");
 const logoutModal = document.querySelector("#logoutModal");
 
 if (exitButton && logoutModal) {
-  const confirmExit = document.querySelector(".logout-confirm");
-  const cancelExit = document.querySelector(".logout-cancel");
+    const confirmExit = document.querySelector(".logout-confirm");
+    const cancelExit = document.querySelector(".logout-cancel");
 
-  exitButton.addEventListener("click", () => {
-    logoutModal.showModal();
-  });
-
-  cancelExit.addEventListener("click", () => {
-    logoutModal.close();
-  });
-
-  if (confirmExit) {
-    confirmExit.addEventListener("click", () => {
-      window.location.href = "index.html";
+    exitButton.addEventListener("click", () => {
+        logoutModal.showModal();
     });
-  }
+
+    if (cancelExit) {
+        cancelExit.addEventListener("click", () => {
+            logoutModal.close();
+        });
+    }
+
+    if (confirmExit) {
+        confirmExit.addEventListener("click", () => {
+            localStorage.removeItem("userFio");
+            localStorage.removeItem("userGroup");
+            localStorage.removeItem("theme");
+
+            window.location.reload();
+        });
+    }
 }
 
 const slides = document.querySelectorAll(".slide");
@@ -26,47 +32,49 @@ const arrowNext = document.querySelector(".arrow-next");
 const arrowBack = document.querySelector(".arrow-back");
 
 if (slides.length > 0 && dots.length > 0 && arrowNext && arrowBack) {
-  let current = 0;
-  let timer;
+    let current = 0;
+    let timer;
 
-  function showSlide(index) {
-    current = (index + slides.length) % slides.length;
+    function showSlide(index) {
+        current = (index + slides.length) % slides.length;
 
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === current);
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === current);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === current);
+        });
+    }
+
+    function startTimer() {
+        clearInterval(timer);
+
+        timer = setInterval(() => {
+            showSlide(current + 1);
+        }, 6000);
+    }
+
+    arrowNext.addEventListener("click", () => {
+        showSlide(current + 1);
+        startTimer();
+    });
+
+    arrowBack.addEventListener("click", () => {
+        showSlide(current - 1);
+        startTimer();
     });
 
     dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === current);
+        dot.addEventListener("click", () => {
+            showSlide(i);
+            startTimer();
+        });
     });
-  }
 
-  function startTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => showSlide(current + 1), 6000);
-  }
-
-  arrowNext.addEventListener("click", () => {
-    showSlide(current + 1);
+    showSlide(0);
     startTimer();
-  });
-
-  arrowBack.addEventListener("click", () => {
-    showSlide(current - 1);
-    startTimer();
-  });
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      showSlide(i);
-      startTimer();
-    });
-  });
-
-  showSlide(0);
-  startTimer();
 }
-
 
 const savedTheme = localStorage.getItem("theme") || "dark";
 
@@ -87,7 +95,7 @@ themeRadios.forEach((radio) => {
             "light-theme",
             selectedTheme === "light"
         );
-
+        
         localStorage.setItem("theme", selectedTheme);
     });
 });
