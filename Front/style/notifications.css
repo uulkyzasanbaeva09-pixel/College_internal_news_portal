@@ -1,0 +1,128 @@
+main {
+    margin-left: 270px;
+    padding: 20px 40px 40px;
+    min-width: 0;
+}
+
+main h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    min-width: 0;
+    padding: 20px 24px;
+
+    background-color: var(--block);
+    border: 2px solid var(--border);
+    border-radius: 20px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.notification:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--btn);
+    transform: translateY(-2px);
+}
+
+.notification img {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.notification h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+body.light-theme .notification img {
+    filter: brightness(0);
+}
+
+
+@media (max-width: 1024px) {
+    main {
+        margin-left: 230px;
+        padding: 20px 28px 35px;
+    }
+
+    main h1 {
+        font-size: 28px;
+    }
+
+    .notification {
+        padding: 18px 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    main {
+        margin: 0;
+        width: 100%;
+        padding: 20px 16px 30px;
+    }
+
+    main h1 {
+        font-size: 25px;
+        margin-bottom: 22px;
+    }
+
+    .notifications {
+        gap: 12px;
+    }
+
+    .notification {
+        gap: 13px;
+        padding: 16px;
+        border-radius: 15px;
+    }
+
+    .notification img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .notification h2 {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 380px) {
+    main {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .notification {
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .notification h2 {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новостной портал "ИТ.Москва"</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/news.css">
+    <link rel="stylesheet" href="style/article.css">
+    <link rel="stylesheet" href="style/responsive.css">
+</head>
+<body class="news-page">
+    <aside class="sidebar">
+        <img src="Фото/Лого.svg" alt="Логотип" />
+        <h1 class="sidebar-h1"><span class="it">IT.</span>Москва</h1>
+        <nav>
+          <a class="nav-btn" href="index.html" aria-current="page">
+            <img
+              src="Фото/Дом.svg"
+              alt="иконка главная"
+              width="25"
+              height="25"
+            />
+            Главная
+          </a>
+  
+          <a class="nav-btn" href="favorites.html">
+            <img
+              src="Фото/Избранное.svg"
+              alt="иконка избранное"
+              width="30"
+              height="30"
+            />
+            Избранное
+          </a>
+  
+          <a class="nav-btn active" href="news.html">
+            <img
+              src="Фото/новости.svg"
+              alt="иконка новости"
+              width="30"
+              height="30"
+            />
+            Все новости
+          </a>
+  
+          <a class="nav-btn" href="settings.html">
+            <img
+              src="Фото/настройки.svg"
+              alt="иконка настройки"
+              width="30"
+              height="30"
+            />
+            Настройки
+          </a>
+        </nav>
+  
+        <button class="exit" type="button">
+          <img
+            src="Фото/Выход.svg"
+            alt="иконка выход"
+            width="34"
+            height="34"
+          />
+          Выйти
+        </button>
+      </aside>
+      <header>
+    <div class="mobile-brand">
+        <img src="Фото/Лого.svg" alt="Логотип">
+        <span><span class="it">IT.</span>Москва</span>
+    </div>
+
+    <div class="header-left">
+      <div class="search-container" id="searchContainer">
+
+    <img
+        src="Фото/Поиск.svg"
+        alt="Иконка поиска"
+        class="search-icon"
+    >
+
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="Поиск новостей и мероприятий"
+        class="search"
+    >
+
+    <button
+        type="button"
+        class="search-clear"
+        id="searchClear"
+        aria-label="Очистить поиск"
+    >
+        ×
+    </button>
+
+</div>
+    </div>
+
+    <div class="header-right">
+        <a href="notifications.html">
+            <img src="Фото/Уведомления.svg"
+                 alt="Уведомления"
+                 class="bell">
+        </a>
+        <a href="settings.html">
+          <img src="Фото/Профиль.svg" alt="Профиль" class="profile" />
+        </a>
+
+        <button class="mobile-menu-toggle"
+                type="button"
+                aria-label="Открыть меню"
+                aria-expanded="false">
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round">
+                <path d="M3 6h18"></path>
+                <path d="M3 12h18"></path>
+                <path d="M3 18h18"></path>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-menu-overlay"></div>
+      <dialog class="logout-modal" id="logoutModal">
+        <p>Вы точно хотите выйти?</p>
+        <button class="logout-confirm" type="button">Выйти</button>
+        <button class="logout-cancel" type="button">Отмена</button>
+      </dialog>
+      <main>
+        <h1 class="main-title">Все новости</h1>
+        <section class="filters">
+          <button class="filter-btn active" data-filter="all">Все</button>
+          <button class="filter-btn" data-filter="учеба">Учеба</button>
+          <button class="filter-btn" data-filter="мероприятия">Мероприятия</button>
+          <button class="filter-btn" data-filter="конкурсы">Конкурсы</button>
+          <button class="filter-btn" data-filter="спорт">Спорт</button>
+          <img src="Фото/фильтр.svg" alt="фильтр" class="filter-icon"/>
+        </section>
+        
+        <section class="cards">
+          <article class="new"
+          data-article-id="article1.html"
+          data-category="учеба"
+          data-specialty="Компьютерные системы и комплексы (09.02.01)"
+          onclick="window.location.href='article1.html'"
+          data-date="10.11.2026"
+          data-time-period="вечер">
+            <img
+            src="Фото/Последние новости_ 1.png"
+            alt="Новость 1"
+          />
+          <h3>Победа на кубке по квантовому программированию</h3>
+          <time datetime="2026-11-10">10.11.26г</time>
+          <time datetime="18:00">18:00</time>
+          <button class="heart" type="button" aria-label="Добавить в избранное">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"
+              />
+            </svg>
+          </button>
+        </article>
+        <article class="new"
+        data-article-id="article2.html"
+        data-category="мероприятия"           
+        data-specialty="Интеграция решений с применением технологий искусственного интеллекта (09.02.13)"
+        onclick="window.location.href='article2.html'"
+        data-date="11.11.2026"
+        data-time-period="день">
+          <img
+            src="Фото/Последние новости_ 2.png"
+            alt="Новость 2"
+          />
+          <h3>Открыта лаборатория цифровых двойников</h3>
+          <time datetime="2026-11-11">11.11.26г</time>
+          <time datetime="14:00">14:00</time>
+          <button class="heart" type="button" aria-label="Добавить в избранное">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"
+              />
+            </svg>
+          </button>
+        </article>
+        <article class="new"
+        data-article-id="article7.html"
+        data-category="спорт"
+        onclick="window.location.href='article7.html'"
+        data-date="15.11.2026"
+        data-time-period="день">
+          <img
+            src="Фото/Новость 3.png"
+            alt="Новость 2"
+          />
+          <h3>Турнир по киберспорту среди колледжей</h3>
+          <time datetime="2026-11-15">15.11.26г</time>
+          <time datetime="16:00">16:00</time>
+          <button class="heart" type="button" aria-label="Добавить в избранное">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"
+              />
+            </svg>
+          </button>
+        </article>
+        <article
+        class="new"
+        data-article-id="article3.html"
+        data-category="спорт"
+        data-specialty="Интеграция решений с применением технологий искусственного интеллекта (09.02.13)"
+        onclick="window.location.href = 'article3.html'"
+        data-date="01.12.2026"
+        data-time-period="вечер">
+        <img src="Фото/Слайд 1.png" alt="VR зал">
+        <h3>Перенос пар: Лекция по этике ИИ</h3>
+        <time datetime="2026-12-01">01.12.26г</time>
+        <time datetime="19:30-20:30">19:30-20:30</time>
+        <button class="heart" type="button" aria-label="Добавить в избранное">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"/>
+        </svg>
+    </button>
+</article>
+<article
+    class="new"
+    data-article-id="article5.html"
+    data-category="мероприятия"
+    onclick="window.location.href = 'article5.html'"
+    data-date="23.01.2027"
+    data-time-period="день"
+>
+    <img src="Фото/Слайд 2.png" alt="День открытых дверей">
+
+    <h3>День открытых дверей: «Твое будущее в IT»</h3>
+
+    <time datetime="2027-01-23">23.01.27г</time>
+    <time datetime="10:00-17:00">10:00-17:00</time>
+
+    <button class="heart" type="button" aria-label="Добавить в избранное">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"/>
+        </svg>
+    </button>
+</article>
+<article
+    class="new"
+    data-article-id="article6.html"
+    data-category="учеба"
+    onclick="window.location.href = 'article6.html'"
+    data-date="17.09.2026"
+>
+    <img src="Фото/Слайд 3.png" alt="Партнерство с ИТ компанией">
+
+    <h3>Партнерство с лидерами рынка</h3>
+
+    <time datetime="2026-09-17">17.09.26г</time>
+
+    <button class="heart" type="button" aria-label="Добавить в избранное">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21s-8.5-5.3-10-9.5C.8 7.8 3.2 4.5 6.7 4.5c2 0 3.8 1.2 5.3 3 1.5-1.8 3.3-3 5.3-3 3.5 0 5.9 3.3 4.7 7C20.5 15.7 12 21 12 21z"/>
+        </svg>
+    </button>
+</article>
+      </section>
+      <div class="empty" id="emptyState">
+        <p>Здесь пусто</p>
+      </div>
+      <dialog class="filter-modal" id="filterModal">
+        <h2>Фильтры</h2>
+
+        <div class="filter-group">
+          <select class="filter-select" id="filterSpecialty">
+            <option value="">Специальность</option>
+            <option value="Компьютерные системы и комплексы (09.02.01)">
+              Компьютерные системы и комплексы (09.02.01)
+            </option>
+            <option
+              value="Интеграция решений с применением технологий искусственного интеллекта (09.02.13)"
+            >
+              Интеграция решений с применением технологий искусственного
+              интеллекта (09.02.13)
+            </option>
+            <option value="Веб-разработка (09.02.09)">
+              Веб-разработка (09.02.09)
+            </option>
+            <option
+              value="Разработка компьютерных игр, дополненной и виртуальной реальности (09.02.10)"
+            >
+              Разработка компьютерных игр, дополненной и виртуальной реальности
+              (09.02.10)
+            </option>
+            <option value="Сетевое и системное администрирование (09.02.06)">
+              Сетевое и системное администрирование (09.02.06)
+            </option>
+            <option value="Интеллектуальные интегрированные системы (09.02.08)">
+              Интеллектуальные интегрированные системы (09.02.08)
+            </option>
+            <option
+              value="Разработка и управление программным обеспечением (09.02.11)"
+            >
+              Разработка и управление программным обеспечением (09.02.11)
+            </option>
+            <option
+              value="Техническая эксплуатация и сопровождение информационных систем (09.02.12)"
+            >
+              Техническая эксплуатация и сопровождение информационных систем
+              (09.02.12)
+            </option>
+            <option
+              value="Обеспечение информационной безопасности телекоммуникационных систем (10.02.04)"
+            >
+              Обеспечение информационной безопасности телекоммуникационных
+              систем (10.02.04)
+            </option>
+            <option
+              value="Обеспечение информационной безопасности автоматизированных систем (10.02.05)"
+            >
+              Обеспечение информационной безопасности автоматизированных систем
+              (10.02.05)
+            </option>
+            <option
+              value="Информационное моделирование в строительстве (08.02.15)"
+            >
+              Информационное моделирование в строительстве (08.02.15)
+            </option>
+            <option value="Мастер вертикального транспорта (23.01.18)">
+              Мастер вертикального транспорта (23.01.18)
+            </option>
+            <option value="Графический дизайнер (54.01.20)">
+              Графический дизайнер (54.01.20)
+            </option>
+          </select>
+          <svg
+            class="select-arrow"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </div>
+
+        <div class="filter-columns">
+          <div class="filter-column">
+            <h3>Категории</h3>
+            <label class="checkbox-label">
+              <input type="checkbox" name="category" value="учеба" />
+              <span>Учеба</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="category" value="мероприятия" />
+              <span>Мероприятия</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="category" value="конкурсы" />
+              <span>Конкурсы</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="category" value="спорт" />
+              <span>Спорт</span>
+            </label>
+          </div>
+
+          <div class="filter-column">
+            <h3>Дата</h3>
+            <input
+              type="text"
+              class="filter-input"
+              id="filterDate"
+              placeholder="дд.мм.гггг"
+            />
+
+            <h3>Время</h3>
+            <div class="filter-group">
+              <select class="filter-select" id="filterTime">
+                <option value="">Любое время</option>
+                <option value="утро">Утро (до 12:00)</option>
+                <option value="день">День (12:00–18:00)</option>
+                <option value="вечер">Вечер (после 18:00)</option>
+              </select>
+              <svg
+                class="select-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-actions">
+          <button class="btn-reset" type="button" id="resetFilters">
+            Сбросить
+          </button>
+          <button class="btn-apply" type="button" id="applyFilters">
+            Применить
+          </button>
+        </div>
+      </dialog>
+    </main>
+    <script src="script/main.js"></script>
+      <script src="script/favorites.js"></script>
+      <script src="script/news.js"></script>
+      <script src="script/responsive.js"></script>
+</body>
+</html>
